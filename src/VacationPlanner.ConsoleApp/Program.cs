@@ -124,12 +124,22 @@ namespace VacationPlanner.ConsoleApp
                 return;
             }
 
-            foreach (var vacation in allVacations)
+            foreach (var vacation in allVacations.GroupBy(v => v.Employee))
             {
+                var employee = vacation.Key;
                 Console.WriteLine(
-                    $"{vacation.Employee?.FirstName} {vacation.Employee?.LastName} {vacation.Employee?.MiddleName} "
-                        + $"отпуск с {vacation.StartDate:dd.MM.yyyy} по {vacation.EndDate:dd.MM.yyyy}"
+                    $"Дни отпуска {employee?.LastName} {employee?.FirstName} {employee?.MiddleName}:"
                 );
+
+                foreach (var vac in vacation)
+                {
+                    for (var date = vac.StartDate; date <= vac.EndDate; date = date.AddDays(1))
+                    {
+                        Console.WriteLine($"{date:dd.MM.yyyy}");
+                    }
+                }
+
+                Console.WriteLine(); // Пустая строка для разделения сотрудников
             }
         }
 
