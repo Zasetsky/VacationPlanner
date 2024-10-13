@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: vacation_user
+      POSTGRES_PASSWORD: vacation_password
+      POSTGRES_DB: vacation_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vacation_user"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: ../
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=vacation_db;Username=vacation_user;Password=vacation_password
+
+volumes:
+  db_data:

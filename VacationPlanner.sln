@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CD103196-E16A-41D5-8A20-FAFEFF03E356}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanner.Domain", "src\VacationPlanner.Domain\VacationPlanner.Domain.csproj", "{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanner.Data", "src\VacationPlanner.Data\VacationPlanner.Data.csproj", "{48F3D62B-2C3E-4593-81F4-F99055BB55C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanner.Services", "src\VacationPlanner.Services\VacationPlanner.Services.csproj", "{9F871B44-B910-45FC-A382-F8BBDE978A4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VacationPlanner.ConsoleApp", "src\VacationPlanner.ConsoleApp\VacationPlanner.ConsoleApp.csproj", "{0540C0E4-B3D0-4910-8F76-950B515344FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48F3D62B-2C3E-4593-81F4-F99055BB55C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F3D62B-2C3E-4593-81F4-F99055BB55C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F3D62B-2C3E-4593-81F4-F99055BB55C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F3D62B-2C3E-4593-81F4-F99055BB55C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F871B44-B910-45FC-A382-F8BBDE978A4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F871B44-B910-45FC-A382-F8BBDE978A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F871B44-B910-45FC-A382-F8BBDE978A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F871B44-B910-45FC-A382-F8BBDE978A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0540C0E4-B3D0-4910-8F76-950B515344FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0540C0E4-B3D0-4910-8F76-950B515344FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0540C0E4-B3D0-4910-8F76-950B515344FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0540C0E4-B3D0-4910-8F76-950B515344FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6B00915-7320-4A5A-AB8A-8F8F8C49D4D6} = {CD103196-E16A-41D5-8A20-FAFEFF03E356}
+		{48F3D62B-2C3E-4593-81F4-F99055BB55C5} = {CD103196-E16A-41D5-8A20-FAFEFF03E356}
+		{9F871B44-B910-45FC-A382-F8BBDE978A4A} = {CD103196-E16A-41D5-8A20-FAFEFF03E356}
+		{0540C0E4-B3D0-4910-8F76-950B515344FB} = {CD103196-E16A-41D5-8A20-FAFEFF03E356}
+	EndGlobalSection
+EndGlobal
