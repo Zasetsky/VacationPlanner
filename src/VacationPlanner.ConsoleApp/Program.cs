@@ -89,77 +89,27 @@ namespace VacationPlanner.ConsoleApp
             while (true)
             {
                 Console.WriteLine("\nВыберите действие:");
-                Console.WriteLine("1. Добавить пользователя");
-                Console.WriteLine("2. Вывести все отпуска");
-                Console.WriteLine("3. Перерасчитать отпуска");
-                Console.WriteLine("4. Выйти");
+                Console.WriteLine("1. Вывести все отпуска");
+                Console.WriteLine("2. Перерасчитать отпуска");
+                Console.WriteLine("3. Выйти");
                 Console.Write("Введите номер действия: ");
                 var input = Console.ReadLine();
 
                 switch (input)
                 {
                     case "1":
-                        await AddEmployeeAsync(vacationService);
-                        break;
-                    case "2":
                         await DisplayAllVacationsAsync(vacationService);
                         break;
-                    case "3":
+                    case "2":
                         await RecalculateVacationsAsync(vacationService);
                         break;
-                    case "4":
+                    case "3":
                         Console.WriteLine("Выход из приложения.");
                         return;
                     default:
                         Console.WriteLine("Неверный ввод. Пожалуйста, попробуйте снова.");
                         break;
                 }
-            }
-        }
-
-        static async Task AddEmployeeAsync(IVacationService vacationService)
-        {
-            Console.WriteLine("\n--- Добавление Пользователя ---");
-            Console.Write("Введите имя: ");
-            var firstName = Console.ReadLine();
-
-            Console.Write("Введите фамилию: ");
-            var lastName = Console.ReadLine();
-
-            Console.Write("Введите отчество: ");
-            var middleName = Console.ReadLine();
-
-            if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(lastName))
-            {
-                Console.WriteLine("Имя и фамилия обязательны для заполнения.");
-                return;
-            }
-
-            var newEmployee = new Employee
-            {
-                FirstName = firstName.Trim(),
-                LastName = lastName.Trim(),
-                MiddleName = string.IsNullOrWhiteSpace(middleName) ? null : middleName.Trim(),
-            };
-
-            var addedEmployee = await vacationService.AddEmployeeAsync(newEmployee);
-            Console.WriteLine(
-                $"\nПользователь добавлен: {addedEmployee.FirstName} {addedEmployee.LastName} {addedEmployee.MiddleName}"
-            );
-
-            var vacations = await vacationService.GetVacationsForEmployeeAsync(addedEmployee.Id);
-            if (vacations.Any())
-            {
-                foreach (var vacation in vacations)
-                {
-                    Console.WriteLine(
-                        $"Отпуск с {vacation.StartDate:dd.MM.yyyy} по {vacation.EndDate:dd.MM.yyyy}"
-                    );
-                }
-            }
-            else
-            {
-                Console.WriteLine("У этого пользователя еще не запланированы отпуска.");
             }
         }
 

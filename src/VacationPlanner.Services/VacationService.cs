@@ -106,40 +106,6 @@ namespace VacationPlanner.Services
             return endDate.AddDays(-1);
         }
 
-        public async Task<Employee> AddEmployeeAsync(Employee employee)
-        {
-            _context.Employees.Add(employee);
-            await _context.SaveChangesAsync();
-
-            // Планируем отпуск для нового сотрудника
-            var existingVacations = await _context
-                .Vacations.Where(v =>
-                    v.EmployeeId == employee.Id && v.StartDate.Year == DateTime.UtcNow.Year
-                )
-                .ToListAsync();
-
-            if (!existingVacations.Any())
-            {
-                var vacation = new Vacation
-                {
-                    EmployeeId = employee.Id,
-                    StartDate = DateTime.SpecifyKind(
-                        new DateTime(DateTime.UtcNow.Year, 1, 1),
-                        DateTimeKind.Utc
-                    ),
-                    EndDate = DateTime.SpecifyKind(
-                        new DateTime(DateTime.UtcNow.Year, 1, 28),
-                        DateTimeKind.Utc
-                    ),
-                };
-
-                _context.Vacations.Add(vacation);
-                await _context.SaveChangesAsync();
-            }
-
-            return employee;
-        }
-
         public async Task<List<Vacation>> GetVacationsForEmployeeAsync(int employeeId)
         {
             return await _context

@@ -20,43 +20,43 @@ namespace VacationPlanner.Data
                     new Employee
                     {
                         Id = 1,
-                        FirstName = "Иванов",
-                        LastName = "Иван",
+                        FirstName = "Иван",
+                        LastName = "Иванов",
                         MiddleName = "Иванович",
                     },
                     new Employee
                     {
                         Id = 2,
-                        FirstName = "Петров",
-                        LastName = "Петр",
+                        FirstName = "Петр",
+                        LastName = "Петров",
                         MiddleName = "Петрович",
                     },
                     new Employee
                     {
                         Id = 3,
-                        FirstName = "Юлина",
-                        LastName = "Юлия",
+                        FirstName = "Юлия",
+                        LastName = "Юлина",
                         MiddleName = "Юлиановна",
                     },
                     new Employee
                     {
                         Id = 4,
-                        FirstName = "Сидоров",
-                        LastName = "Сидор",
+                        FirstName = "Сидор",
+                        LastName = "Сидоров",
                         MiddleName = "Сидорович",
                     },
                     new Employee
                     {
                         Id = 5,
-                        FirstName = "Павлов",
-                        LastName = "Павел",
+                        FirstName = "Павел",
+                        LastName = "Павлов",
                         MiddleName = "Павлович",
                     },
                     new Employee
                     {
                         Id = 6,
-                        FirstName = "Георгиев",
-                        LastName = "Георг",
+                        FirstName = "Георг",
+                        LastName = "Георгиев",
                         MiddleName = "Георгиевич",
                     }
                 );
